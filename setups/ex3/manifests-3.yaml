@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vexamenv1
+  namespace: vex
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: vexamen
+      app.kubernetes.io/managed-by: vex-team
+      app.kubernetes.io/app-version: v1.0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/part-of: vexamen
+        app.kubernetes.io/managed-by: vex-team
+        app.kubernetes.io/app-version: v1.0
+    spec:
+      containers:
+      - name: vexamen
+        image: quay.io/k8sexercices/vexamen-server:v1.0
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+          name: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vexamenv2
+  namespace: vex
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: vexamen
+      app.kubernetes.io/managed-by: vex-team
+      app.kubernetes.io/app-version: v2.0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/part-of: vexamen
+        app.kubernetes.io/managed-by: vex-team
+        app.kubernetes.io/app-version: v2.0
+    spec:
+      containers:
+      - name: vexamen
+        image: quay.io/k8sexercices/vexamen-server:v2.0
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+          name: http

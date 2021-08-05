@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "V/WiIXE827pcaMVvyvHc6ohNA5w4i82LwGBwhkFTxF2Vsfb+jRaCW0txHlhJZpOf0SwHIhRg8LFMsajujFb2pA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\etomas\\source\\repos\\primes\\primes\\primes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\etomas\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.10\\microsoft.visualstudio.azure.containers.tools.targets.1.10.10.nupkg.sha512"
+  ],
+  "logs": []
+}

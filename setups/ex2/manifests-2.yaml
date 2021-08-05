@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: bm-corp
+  name: bm-api
+  labels:
+    app.kubernetes.io/managed-by: bm-team
+spec:
+  containers:
+  - name: api
+    image: quay.io/k8sexercices/bmapi:v1.0
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "5m"
+      limits:
+        memory: "64Mi"
+        cpu: "10m"
+    ports:
+      - containerPort: 8080

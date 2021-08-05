@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: ufo
+  name: pod-739273a
+  labels:
+    app.kubernetes.io/part-of: delacruz
+    app.kubernetes.io/managed-by: ufo-team                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+spec:
+  containers:
+  - name: maincontainer
+    image: nginx
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "5m"
+      limits:
+        memory: "64Mi"
+        cpu: "10m"
+    ports:
+      - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: ufo
+  name: pod-837cdf1
+  labels:
+    app.kubernetes.io/part-of: vexamen
+    app.kubernetes.io/managed-by: ufo-team
+spec:
+  containers:
+  - name: maincontainer
+    image: quay.io/k8sexercices/vexamen-server:v1.0
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "5m"
+      limits:
+        memory: "64Mi"
+        cpu: "10m"
+    ports:
+      - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: ufo
+  name: pod-8a1a39e
+  labels:
+    app.kubernetes.io/part-of: ryucorb
+    app.kubernetes.io/managed-by: ufo-team
+spec:
+  containers:
+  - name: maincontainer
+    image: nginx
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "5m"
+      limits:
+        memory: "64Mi"
+        cpu: "10m"
+    ports:
+      - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ufo
+  name: svc-vexamen
+spec:
+  selector:
+    app.kubernetes.io/part-of: vexamen-server
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ufo
+  name: svc-delacruz
+spec:
+  selector:
+    app.kubernetes.io/part-of: delacruz
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ufo
+  name: svc-ryucorb
+spec:
+  selector:
+    app.kubernetes.io/part-of: ryucorb
+  ports:
+  - port: 80
+    targetPort: 80
