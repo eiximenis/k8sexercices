@@ -12,8 +12,6 @@ if [ -z "$git" ]; then
     exit 1
 fi
 
-pushd .
-
 echo "Enabling ingress & metrics-server on minikube..."
 minikube addons enable ingress
 minikube addons enable metrics-server
