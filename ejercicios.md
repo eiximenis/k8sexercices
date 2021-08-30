@@ -7,5 +7,6 @@ Enlaces a los ejercicios :)
 1. [Ejercicio 3](./ejercicio-3.md). [Solución](./soluciones/solucion-3.md)
 1. [Ejercicio 4](./ejercicio-4.md). [Solución](./soluciones/solucion-4.md)
 1. [Ejercicio 5](./ejercicio-5.md). [Solución](./soluciones/solucion-5.md)
+1. [Ejercicio 6](./ejercicio-5.md). [Solución](./soluciones/solucion-6.md)
 
 Recuerda: ¡no están ordenados bajo ningún criterio!

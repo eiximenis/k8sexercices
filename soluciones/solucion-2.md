@@ -91,4 +91,5 @@ total 6412
 
 ¡Perfecto!
 
-[Volver a los ejercicios](../readme.md)
+[Volver a las soluciones](./readme.md)
+[Volver a los ejercicios](../ejercicios.md)

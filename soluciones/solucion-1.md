@@ -130,4 +130,5 @@ kubectl run bb --image busybox -n ufo -it --rm -- wget -qO- http://svc-vexamen
 2. Que sean los endpoints que tocan (mira las IPs)
 3. Qué el mapeo de puertos sea correcto
 
-[Volver a los ejercicios](../readme.md)
+[Volver a las soluciones](./readme.md)
+[Volver a los ejercicios](../ejercicios.md)

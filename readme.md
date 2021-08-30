@@ -56,18 +56,13 @@ Simplemente ejecuta el fichero `uninstall.sh` para limpiar los escenarios. **Not
 
 Los ejercicios se instalan todos en sus namespaces. Esa es una lista de los namespaces usados:
 
-- `ufo`
-- `bm-corp`
-- `logaiter`
-- `gag`
-
 Pero, como ya sabes, hay algunos objetos que se instalan a nivel de clúster.
 
 ## ¿Y las soluciones?
 
 Las soluciones están en la carpeta `/soluciones`. **Por supuesto es posible que haya otras soluciones**. Los problemas se pueden solucionar de varias maneras, y eso mismo ocurre en el CKAD. Lo importante es que des con una solución que cumpla los requisitos planteados. **¡Hasta es posible que tu solución sea mejor que la propuesta!** :)
 
-### Verificar una solución
+### Verificar una solución (TODAVÍA NO ESTÁ IMPLEMENTADO, SORRY)
 
 Para verificar si has resuelto una solución, puedes hacerlo a mano, pero también puedes usar el script `check-exercice.sh` pasándole los ejercicios a verificar con el parámetro `-e`, como p.ej. `check-exercicie.sh -e 1,4` para que te verifique los ejercicios 1 y 4. Por supuesto la verificación se basa **en la solución propuesta**, así que es posible que, en algunos casos, te diga que falla y realmente lo hayas solucionado bien. Si te encuentras en esos casos, abre una Issue, para discutir tu solución e ir adaptando los ficheros de verificación :)
 

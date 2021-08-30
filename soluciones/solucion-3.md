@@ -63,3 +63,6 @@ If you don't see a command prompt, try pressing enter.
 ```
 
 ¡Perfecto! :)
+
+[Volver a las soluciones](./readme.md)
+[Volver a los ejercicios](../ejercicios.md)

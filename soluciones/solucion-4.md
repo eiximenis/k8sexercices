@@ -42,4 +42,5 @@ test-lg   1/1     Running   0          7m23s
 
 ¡Ojalá todo fuera tan sencillo! :)
 
-[Volver a los ejercicios](../readme.md)
+[Volver a las soluciones](./readme.md)
+[Volver a los ejercicios](../ejercicios.md)

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cryptoserver
+  namespace: logaiter
+spec:
+  selector:
+    matchLabels:
+      app: cryptoserver
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: cryptoserver
+    spec:
+     volumes:
+       - name: sharedkeys
+         emptyDir: {}
+     containers:
+      - name: api
+        image: quay.io/k8sexercices/fileserver:v1.0
+        env:
+        - name: DATA_PATH
+          value: /sharedkeys
+        command:
+          - bash
+          - -c
+          - |
+            dotnet FileServer.dll create
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: sharedkeys
+          mountPath: /sharedkeys
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cryptoserver
+  namespace: logaiter
+spec:
+  selector:
+    app: cryptoserver
+  ports:
+  - port: 80

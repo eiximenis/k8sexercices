@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: cryptoserver
+  namespace: logaiter
+spec:
+  selector:
+    matchLabels:
+      app: cryptoserver
+  serviceName: cryptoserver
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: cryptoserver
+    spec:
+     volumes:
+       - name: sharedkeys
+         persistentVolumeClaim:
+           claimName: cryptodata
+     containers:
+      - name: api
+        image: quay.io/k8sexercices/fileserver:v1.0
+        env:
+        - name: DATA_PATH
+          value: /sharedkeys
+        readinessProbe:
+          periodSeconds: 15
+          initialDelaySeconds: 5
+          exec:
+            command:
+            - stat
+            - /sharedkeys/keys.txt
+        command:
+          - bash
+          - -c
+          - |
+            if [[ "$HOSTNAME" == *"-0" ]]
+            then
+              if [[ -f "$DATA_PATH/keys.txt" ]]
+              then
+                echo "File $DATA_PATH/keys.txt found. Using dotnet FileServer.dll as entrypoint"
+                dotnet FileServer.dll
+              else
+                echo "File $DATA_PATH/keys.txt *NOT* found. Using dotnet FileServer.dll create as entrypoint"
+                dotnet FileServer.dll create
+              fi
+            else
+              echo "Not 1st instance. Using dotnet FileServer.dll as entrypoint"
+              dotnet FileServer.dll
+            fi  
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: sharedkeys
+          mountPath: /sharedkeys

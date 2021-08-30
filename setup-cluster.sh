@@ -28,6 +28,7 @@ if [ -z "$exercices"]; then
         echo "---- Checking $clustertype requeriments ----"
         source ./check-$clustertype.sh
         if [ $? -ne 0 ]; then
+            popd
             exit 1
         fi
     else
@@ -43,6 +44,8 @@ kubectl create ns bm-corp
 kubectl create ns logaiter
 kubectl create ns gag
 kubectl create ns vex
+kubectl create ns logaiter
+
 pushd setups
 for setup in install-*.sh; do
     basename="${setup%.*}"                      # Get the file without the .sh extension

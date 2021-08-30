@@ -57,4 +57,5 @@ kubectl scale deploy clientv2 -n gag --replicas=1
 
 ¡Listos! ¡Si ahora compruebas los logs verás que cada uno de los clientes accede a su versión correspondiente!
 
-[Volver a los ejercicios](../readme.md)
+[Volver a las soluciones](./readme.md)
+[Volver a los ejercicios](../ejercicios.md)
