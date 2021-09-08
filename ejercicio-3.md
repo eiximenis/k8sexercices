@@ -1,4 +1,4 @@
-# Ejercicio 3 (NO DISPONIBLE TODAVÍA)
+# Ejercicio 3
 
 **Namespace a usar: `vex`**
 

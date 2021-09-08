@@ -23,12 +23,12 @@ spec:
     requests:
       storage: 1Gi
   volumeMode: Filesystem
-  storageClassName: standard
+  storageClassName: standard      # local-path para rancher-desktop
   accessModes:
     - ReadWriteOnce
 ```
 
-> La PVC la he definido con el valor de `spec.storageClassName` a `standard` que es la StorageClass de Minikube que soporta autoaprovisionamiento de PVs. En caso de usar otro clúster, usa el valor de la StorageClass deseada o crea manualmente el PV si no quieres/puedes usar autoaprovisionamiento de PVs.
+> La PVC la he definido con el valor de `spec.storageClassName` a `standard` que es la StorageClass de Minikube que soporta autoaprovisionamiento de PVs. En caso de usar otro clúster, usa el valor de la StorageClass deseada (p. ej. `local-path` en _Rancher Desktop_) o crea manualmente el PV si no quieres/puedes usar autoaprovisionamiento de PVs.
 
 El siguiente paso es crear el _StatefulSet_. El **esqueleto inicial** es como sigue:
 

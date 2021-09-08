@@ -40,7 +40,7 @@ Luego ejecuta el fichero `setup-cluster.sh` para cargar los escenarios en el clu
 
 **Nota**: Puedes instalar ejercicios en concreto usando el parámetro `-e` de `setup-cluster.sh` (p. ej. `./setup-cluster.sh -e 1,4`)
 
-> El fichero `./setup-cluster.sh` soporta el parámetro `-c` para indicar que tipo de cluster quieres usar. El único valor soportado a día de hoy es `minikube` (que además es el valor por defecto). Espero poder agregar otros clústers en el futuro (como KinD o el de Docker Compose entre otros).
+> El fichero `./setup-cluster.sh` soporta el parámetro `-c` para indicar que tipo de cluster quieres usar. Los valores soportados son `minikube` (por defecto) y `rancher-desktop` (si usas [Rancher Desktop](https://rancherdesktop.io/))
 
 > Espero agregar ficheros Powershell core además de los bash en un futuro.
 
@@ -56,11 +56,17 @@ Simplemente ejecuta el fichero `uninstall.sh` para limpiar los escenarios. **Not
 
 Los ejercicios se instalan todos en sus namespaces. Esa es una lista de los namespaces usados:
 
+- ufo    
+- bm-corp
+- logaiter
+- gag
+- vex
+
 Pero, como ya sabes, hay algunos objetos que se instalan a nivel de clúster.
 
 ## ¿Y las soluciones?
 
-Las soluciones están en la carpeta `/soluciones`. **Por supuesto es posible que haya otras soluciones**. Los problemas se pueden solucionar de varias maneras, y eso mismo ocurre en el CKAD. Lo importante es que des con una solución que cumpla los requisitos planteados. **¡Hasta es posible que tu solución sea mejor que la propuesta!** :)
+[Las soluciones](./soluciones/readme.md) están en la carpeta `/soluciones`. **Por supuesto es posible que haya otras soluciones**. Los problemas se pueden solucionar de varias maneras, y eso mismo ocurre en el CKAD. Lo importante es que des con una solución que cumpla los requisitos planteados. **¡Hasta es posible que tu solución sea mejor que la propuesta!** :)
 
 ### Verificar una solución (TODAVÍA NO ESTÁ IMPLEMENTADO, SORRY)
 
@@ -71,7 +77,7 @@ Para verificar si has resuelto una solución, puedes hacerlo a mano, pero tambi�
 ¡De un millón de maneras!
 
 1. Proponiendo escenarios nuevas usando issues
-2. Añadiendo soporte a otros clústeres. Muchos escenarios soportan cualquier cluster, pero otros solo admiten minikube (de momento).
+2. Añadiendo soporte a otros clústeres.
 3. Añadiendo escenarios nuevos
 4. ¡Como quieras! :)
 

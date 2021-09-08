@@ -8,6 +8,7 @@ spec:
     requests:
       storage: 1Gi
   volumeMode: Filesystem
-  storageClassName: standard
+  # storageClassName: standard              # minikube
+  storageClassName: local-path           # rancher-desktop
   accessModes:
     - ReadWriteOnce
